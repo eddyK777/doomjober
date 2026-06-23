@@ -1,4 +1,3 @@
-```dart
 import 'package:flutter/material.dart';
 import 'package:doomjober/models/application.dart';
 import 'package:doomjober/utils/cover_letter_generator.dart';
@@ -36,4 +35,4 @@ class ApplicationProvider extends ChangeNotifier {
   int get pendingCount => _applications.where((a) => a.status == 'pending').length;
   int get totalCount => _applications.length;
 }
-```
+
