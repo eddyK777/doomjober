@@ -1,4 +1,3 @@
-```dart
 import 'package:doomjober/models/job.dart';
 import 'package:doomjober/providers/job_provider.dart';
 
@@ -17,4 +16,4 @@ $name
 ''';
   }
 }
-```
+
