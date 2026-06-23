@@ -1,4 +1,3 @@
-```dart
 import 'package:flutter/material.dart';
 import 'package:doomjober/models/job.dart';
 
@@ -46,4 +45,4 @@ class JobCard extends StatelessWidget {
     );
   }
 }
-```
+
