@@ -1,4 +1,3 @@
-```dart
 import 'package:flutter/material.dart';
 import 'package:doomjober/providers/application_provider.dart';
 import 'package:doomjober/screens/job_list_screen.dart';
@@ -114,4 +113,4 @@ class StatsCard extends StatelessWidget {
     );
   }
 }
-```
+
