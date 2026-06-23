@@ -1,4 +1,3 @@
-```dart
 import 'package:flutter/material.dart';
 import 'package:doomjober/models/job.dart';
 import 'package:doomjober/utils/constants.dart';
@@ -38,4 +37,4 @@ class JobProvider extends ChangeNotifier {
     filterJobs(_searchQuery);
   }
 }
-```
+
