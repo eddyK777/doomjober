@@ -1,4 +1,3 @@
-```dart
 import 'package:flutter/material.dart';
 import 'package:doomjober/providers/user_provider.dart';
 import 'package:provider/provider.dart';
@@ -66,4 +65,4 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 }
-```
+
