@@ -1,4 +1,3 @@
-```dart
 import 'package:flutter/material.dart';
 import 'package:doomjober/models/job.dart';
 import 'package:doomjober/providers/job_provider.dart';
@@ -66,4 +65,4 @@ class _JobListScreenState extends State<JobListScreen> {
     );
   }
 }
-```
+
