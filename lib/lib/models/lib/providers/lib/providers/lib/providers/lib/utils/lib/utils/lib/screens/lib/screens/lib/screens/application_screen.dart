@@ -1,4 +1,3 @@
-```dart
 import 'package:flutter/material.dart';
 import 'package:doomjober/providers/application_provider.dart';
 import 'package:doomjober/providers/job_provider.dart';
@@ -45,4 +44,4 @@ class ApplicationScreen extends StatelessWidget {
     );
   }
 }
-```
+
