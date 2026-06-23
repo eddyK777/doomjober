@@ -1,4 +1,3 @@
-```dart
 class Job {
   final String id;
   final String title;
@@ -28,4 +27,4 @@ class Job {
         salary: json['salary'],
       );
 }
-```
+
