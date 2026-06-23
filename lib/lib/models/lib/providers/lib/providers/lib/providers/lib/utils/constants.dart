@@ -1,4 +1,3 @@
-```dart
 import 'package:doomjober/models/job.dart';
 
 class Constants {
@@ -32,4 +31,4 @@ class Constants {
     ),
   ];
 }
-```
+
