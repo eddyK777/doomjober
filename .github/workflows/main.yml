@@ -8,18 +8,39 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5     
+      - uses: actions/checkout@v5
 
+      # Сохраняем наш код во временную папку
+      - name: Save our source code
+        run: |
+          mkdir tmp_src
+          cp -r lib tmp_src/
+          cp pubspec.yaml tmp_src/
+
+      # Устанавливаем Flutter
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.16.0'
 
+      # Создаём чистый проект со всеми нужными папками (android, ios и т.д.)
+      - name: Create fresh Flutter project
+        run: flutter create --project-name doomjober --org com.example .
+
+      # Копируем наши файлы поверх созданных
+      - name: Restore our code
+        run: |
+          cp -r tmp_src/lib ./
+          cp tmp_src/pubspec.yaml ./
+
+      # Получаем зависимости
       - run: flutter pub get
 
+      # Собираем APK
       - run: flutter build apk --release --split-per-abi
 
+      # Загружаем результат
       - name: Upload APK
-        uses: actions/upload-artifact@v5   
+        uses: actions/upload-artifact@v5
         with:
           name: app-release
           path: build/app/outputs/apk/release/*.apk
