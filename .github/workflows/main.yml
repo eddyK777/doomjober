@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      # Сохраняем наш код во временную папку
-      - name: Save our source code
+      # Сохраняем наш код (только lib и pubspec)
+      - name: Save source
         run: |
           mkdir tmp_src
           cp -r lib tmp_src/
@@ -22,15 +22,21 @@ jobs:
         with:
           flutter-version: '3.16.0'
 
-      # Создаём чистый проект со всеми нужными папками (android, ios и т.д.)
+      # Создаём чистый проект
       - name: Create fresh Flutter project
         run: flutter create --project-name doomjober --org com.example .
 
-      # Копируем наши файлы поверх созданных
+      # Восстанавливаем наш код
       - name: Restore our code
         run: |
           cp -r tmp_src/lib ./
           cp tmp_src/pubspec.yaml ./
+
+      # ПРАВИМ compileSdkVersion на 34 (чтобы не было ошибки)
+      - name: Fix Android SDK version
+        run: |
+          sed -i 's/compileSdkVersion [0-9]\+/compileSdkVersion 34/g' android/app/build.gradle
+          sed -i 's/targetSdkVersion [0-9]\+/targetSdkVersion 34/g' android/app/build.gradle
 
       # Получаем зависимости
       - run: flutter pub get
